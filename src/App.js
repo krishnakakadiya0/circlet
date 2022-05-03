@@ -4,68 +4,64 @@ import "./App.css";
 function App() {
   let data = [
     {
-      id: 101,
-      name: "Abacavir",
-      quantity: 25,
-      price: 150,
-      expiry: 2022,
-      status: true,
+      name: "amit",
+      age: 35,
+      salary: 40000,
+      bonus: 1000,
+      status: true
     },
     {
-      id: 102,
-      name: "Eltrombopag",
-      quantity: 90,
-      price: 550,
-      expiry: 2021,
-      status: true,
+      name: "ajay",
+      age: 25,
+      salary: 38000,
+      bonus: 2000,
+      status: false
     },
     {
-      id: 103,
-      name: "Meloxicam",
-      quantity: 85,
-      price: 450,
-      expiry: 2025,
-      status: false,
+      name: "mayur",
+      age: 23,
+      salary: 50000,
+      bonus: 500,
+      status: true
     },
     {
-      id: 104,
-      name: "Allopurinol",
-      quantity: 50,
-      price: 600,
-      expiry: 2023,
-      status: true,
+      name: "jay",
+      age: 29,
+      salary: 35000,
+      bonus: 600,
+      status: true
     },
     {
-      id: 105,
-      name: "Phenytoin",
-      quantity: 63,
-      price: 250,
-      expiry: 2021,
-      status: false,
-    },
+      name: "raj",
+      age: 33,
+      salary: 22000,
+      bonus: 2000,
+      status: true
+    }
   ];
-  let filterData = data.filter((v, i) => v.expiry >= 2022);
-  let totalPrice = filterData.reduce((ass, v, i) => ass + v.price, 0);
+  let filterData = data.filter((v, i) => v.status === true);
+  let totalExpense = filterData.reduce((ass,v,i) => ass + v.salary + v.bonus, 0);
   return (
     <>
       <table border="1">
         <tr>
-          <th>Id</th>
           <th>Name</th>
-          <th>Quantity</th>
-          <th>Expiry</th>
-          <th>Price</th>
-          <th>Total</th>
+          <th>Age</th>
+          <th>Salary</th>
+          <th>Bonus</th>
+          <th>Total Salary</th>
+          <th>Total Expense</th>
         </tr>
-        {filterData.map(({id, name, quantity, expiry, price}, i) => {
+        {filterData.map(({name, age, salary, bonus}, i) => {
+          let totalSalary = salary + bonus;
           return (
             <tr>
-              <td>{id}</td>
               <td>{name}</td>
-              <td>{quantity}</td>
-              <td>{expiry}</td>
-              <td>{price}</td>
-              {i === 0 ? <td rowspan={filterData.length}>{totalPrice}</td> : null}
+              <td>{age}</td>
+              <td>{salary}</td>
+              <td>{bonus}</td>
+              <td>{totalSalary}</td>
+              {i===0?<td rowspan = {filterData.length}>{totalExpense}</td>:null}
             </tr>
           );
         })}
