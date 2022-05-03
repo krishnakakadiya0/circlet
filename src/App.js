@@ -45,7 +45,7 @@ function App() {
     },
   ];
   let filterData = data.filter((v, i) => v.expiry >= 2022);
-  let total = filterData.reduce((ass, v, i) => ass + v.price, 0);
+  let totalPrice = filterData.reduce((ass, v, i) => ass + v.price, 0);
   return (
     <>
       <table border="1">
@@ -65,7 +65,7 @@ function App() {
               <td>{quantity}</td>
               <td>{expiry}</td>
               <td>{price}</td>
-              {i === 0 ? <td rowspan={filterData.length}>{total}</td> : null}
+              {i === 0 ? <td rowspan={filterData.length}>{totalPrice}</td> : null}
             </tr>
           );
         })}
