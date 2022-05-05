@@ -12,7 +12,7 @@ class City extends Component {
     
     changeCity = () => {
         this.setState({
-            city : "Kerla"
+            city : "Ahemdabad"
         })
     }
 
