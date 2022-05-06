@@ -1,8 +1,8 @@
 import "./App.css";
-import City from "./containers/City/City";
-import CityFun from "./containers/CityFun/CityFun";
+import City from "./containers/Country/City";
+import CityFun from "./containers/Country/CityFun";
 import Country from "./containers/Country/Country";
-import CountryFun from "./containers/CountryFun/CountryFun";
+import CountryFun from "./containers/Country/CountryFun";
 
 function App() {
   return (
