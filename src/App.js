@@ -1,5 +1,6 @@
 import "./App.css";
-import BranchProps from "./containers/Branch&Course/BranchProps";
+import Time from "./containers/Time/Time";
+// import BranchProps from "./containers/Branch&Course/BranchProps";
 // import CountryProps from "./containers/Country[Props]/CountryProps";
 // import City from "./containers/Country/City";
 // import CityFun from "./containers/Country/CityFun";
@@ -15,7 +16,9 @@ function App() {
       <CityFun /> 
       <CountryProps /> */}
 
-      <BranchProps />
+      {/* <BranchProps /> */}
+
+      <Time />
 
     </>
   );
