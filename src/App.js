@@ -1,5 +1,6 @@
 import "./App.css";
-import CountryProps from "./containers/Country[Props]/CountryProps";
+import BranchProps from "./containers/Branch&Course/BranchProps";
+// import CountryProps from "./containers/Country[Props]/CountryProps";
 // import City from "./containers/Country/City";
 // import CityFun from "./containers/Country/CityFun";
 // import Country from "./containers/Country/Country";
@@ -11,8 +12,11 @@ function App() {
       {/* <Country />
       <City />
       <CountryFun />
-      <CityFun /> */}
-      <CountryProps /> 
+      <CityFun /> 
+      <CountryProps /> */}
+
+      <BranchProps />
+
     </>
   );
 }
