@@ -1,28 +1,27 @@
 import "./App.css";
-import TimeFun from "./containers/Time/TimeFun";
-// import Time from "./containers/Time/Time";
-// import BranchProps from "./containers/Branch&Course/BranchProps";
-// import CountryProps from "./containers/Country[Props]/CountryProps";
-// import City from "./containers/Country/City";
-// import CityFun from "./containers/Country/CityFun";
-// import Country from "./containers/Country/Country";
-// import CountryFun from "./containers/Country/CountryFun";
+import { useEffect, useState } from 'react';
+import Loading from './components/Loading/Loading.js';
+import Home from './containers/Home/Home'
+
+let LoadingWithHome = Loading(Home);
 
 function App() {
+
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
+
+  let orgData = [
+    {id:101, name:'abc'},
+    {id:102, name:'xyz'}
+  ];
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {setLoading(false); setData(orgData)}, 2000);
+  },[])
   return (
     <>
-      {/* <Country />
-      <City />
-      <CountryFun />
-      <CityFun /> 
-      <CountryProps /> */}
-
-      {/* <BranchProps /> */}
-
-      {/* <Time /> */}
-
-      <TimeFun />
-
+      <LoadingWithHome isLoading={loading} data={data} />
     </>
   );
 }
